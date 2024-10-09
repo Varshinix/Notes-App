@@ -1,0 +1,189 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.rightside-container {
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #DAE5F5;
+  }
+  
+  /* main content  */
+  .rightside-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  .home-image {
+    max-width: 600px; 
+    margin-bottom: 20px;
+  }
+  
+  .sub-message {
+    font-size: 18px;
+    color: #292929;
+    text-align: center;
+    margin: 0;
+    padding: 0 20px;
+  }
+  
+  /* Footer */
+  .lock-png{
+    width: 13px;
+    height: 15px;
+    margin-right: 5px;
+  }
+
+  .bottom-message {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .bottom-message p {
+    color: #292929;
+    font-size: 14px;
+  }
+
+ 
+  /* Note Header */
+.note-header {
+    display: flex;
+    align-items: center;
+    /* padding: 20px; */
+    background-color: navy;
+    color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+  
+  .note-header-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+   /* font-size: 18px; 
+    font-weight: bold;
+    margin-right: 10px;
+    text-transform: uppercase; */
+  }
+
+  .note-group-circle-header {
+    background-color: gray;
+    color: white;
+    margin: 20px;
+    border: 2px solid navy;
+    border-radius: 50%;
+    height: 40px; 
+    width: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    padding: 10px;
+}
+  
+  .note-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Messages List */
+  .messages-container {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .message-item {
+    background-color: #f1f1f1;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    width: 900px;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* time and datre */
+  .message-timestamp {
+    position: absolute; 
+    bottom: 5px; 
+    right: 10px; 
+    font-size: 15px; 
+    color: #353535; /* Change color as needed */
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    }
+  
+  /* Message Input */
+  .message-input-container {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: navy;
+    position: sticky;
+    bottom: 0;
+    width: 98%;
+    height: 200px;
+  }
+  
+ /* .message-input-container input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 25px; /* Font size for input 
+    margin-right: 10px; 
+
+  } */
+
+  .message-input {
+    flex-grow: 1;
+    padding: 20px 10px 10px 10px;
+    border-radius: 20px;
+    border: none;
+    font-size: 25px; /* Font size for input */
+    margin-right: 20px;
+    height: 150px;
+    margin-left: 20px;
+    font-size: 25px;
+    margin-top: 10px;
+    /* padding-bottom: 20px; */
+  }
+  
+.message-input::placeholder {
+    color: #ccc; 
+    font-size: 20px; 
+    opacity: 1; 
+}
+
+  .send-button {
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+  }
+  
+  .send-button img {
+    width: 30px;
+    height: 30px;
+  }

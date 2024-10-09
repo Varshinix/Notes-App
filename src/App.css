@@ -1,0 +1,14 @@
+/* App container for layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Ensure Sidebar takes 1/3 and Rightside takes 2/3 of the space */
+.sidebar-container {
+  width: 30%;
+}
+
+.rightside-container {
+  width: 70%;
+}

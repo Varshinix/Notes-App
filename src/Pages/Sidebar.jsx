@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import localforage from 'localforage';
+import  * as localForage from  "localforage";
 import '../Sidebar.css';
 
 // for getting initials

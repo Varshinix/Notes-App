@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import  * as localforage from  "localforage";
 import '../Sidebar.css';
 
 // for getting initials
@@ -18,24 +17,16 @@ export const Sidebar = ({ setActiveNote }) => {
 
    // for saving data 
    useEffect(() => {
-    localforage.getItem('notes')
-        .then((storedNotes) => {
-            if (storedNotes) {
-                setNotes(storedNotes);
-            }
-        })
-        .catch((error) => {
-            console.error("Error loading stored notes", error);
-        });
+    const storedNotes = localStorage.getItem('notes');
+    if (storedNotes) {
+      setNotes(JSON.parse(storedNotes));
+    }
     }, []);
 
 // Save notes through localforage 
 useEffect(() => {
     if (notes.length > 0) {
-        localforage.setItem('notes', notes)
-            .catch((error) => {
-                console.error("Error saving notes", error);
-            });
+      localStorage.setItem('notes', JSON.stringify(notes));
     }
 }, [notes]);
 
@@ -54,6 +45,7 @@ useEffect(() => {
   const createGroup = () => {
     if (groupName && selectedColor) {
       setNotes([...notes, { name: groupName, color: selectedColor }]);
+      localStorage.setItem('notes', JSON.stringify(newNotes)); 
       closeModal();
     } else {
       alert('Please enter a group name and choose a color');

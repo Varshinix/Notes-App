@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import localforage from 'localforage';
 import "../Rightside.css"
 
 export const Rightside = ({ activeNote }) => {
@@ -9,15 +8,10 @@ export const Rightside = ({ activeNote }) => {
 
     // store data through localStorage 
     useEffect(() => {
-        localforage.getItem('messages')
-        .then((storedMessages) => {
-            if (storedMessages) {
-                setMessages(storedMessages);
-            }
-        })
-        .catch((error) => {
-            console.error("Error loading stored messages", error);
-        });
+        const storedMessages = localStorage.getItem('messages');
+        if (storedMessages) {
+          setMessages(JSON.parse(storedMessages));
+        }
     }, []);
 
 
@@ -31,11 +25,8 @@ export const Rightside = ({ activeNote }) => {
             const newMessages = [...messages, { text: newMessage, date: formattedDate, time: formattedTime }];
             setMessages(newMessages);
 
-            // Save messages to localforage
-            localforage.setItem('messages', newMessages)
-                .catch((error) => {
-                    console.error("Error saving messages", error);
-                });
+            // Save messages to localstorage
+            localStorage.setItem('messages', JSON.stringify(newMessages));
 
             setNewMessage('');
         }

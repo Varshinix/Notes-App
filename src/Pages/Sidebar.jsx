@@ -44,7 +44,8 @@ useEffect(() => {
 
   const createGroup = () => {
     if (groupName && selectedColor) {
-      setNotes([...notes, { name: groupName, color: selectedColor }]);
+      const newNotes = ([...notes, { name: groupName, color: selectedColor }]);
+      setNotes(newNotes);
       localStorage.setItem('notes', JSON.stringify(newNotes)); 
       closeModal();
     } else {
